@@ -12,7 +12,7 @@ Supported platforms:
       
 <img src="https://github.com/HoussemDellai/Xamarin-Forms-Pie-Chart/blob/master/Screenshots/CrossPieCharts_screenshot.png?raw=true"/>
 
-To add a Pie Chart control from your Xamarin Forms project:
+To add a Pie Chart control from your Xamarin Forms project (XAML or CSharp):
 
 var crossPieChartView = new CrossPieChartView<br/>
 {<br/>
