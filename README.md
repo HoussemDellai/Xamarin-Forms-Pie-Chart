@@ -30,4 +30,5 @@ The nuget package is available at : https://www.nuget.org/packages/Xam.FormsPlug
 This plugin was built developed using existing work from:
 
 Pascal Welsch : https://github.com/passsy/android-HoloCircularProgressBar/
+
 Timo Korinth : http://timokorinth.de/creating-circular-progress-bar-wpf-silverlight/
