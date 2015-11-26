@@ -12,7 +12,7 @@
     <iconUrl>https://github.com/HoussemDellai/Xamarin-Forms-Pie-Chart/blob/master/Screenshots/pie.PNG</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>
-      Enrich your mobile application with Pie Charts.
+      Enrich your mobile application with Pie Charts that supports multiple platforms.
       Supported platforms:
       1) Xamarin for Android
       2) Windows Phone Silverlight
@@ -21,7 +21,7 @@
       iOS is not supported yet!
     </description>
     <summary>Enrich your mobile application with Pie Charts.</summary>
-    <tags>xamarin, pcl, xam.pcl, plugin, plugin for xamarin.forms, windows phone, winphone, wp8, wpa81, android, xamarin.forms</tags>
+    <tags>xamarin, pcl, xam.pcl, plugin, plugin for xamarin.forms, cross platform, charts, windows phone, winphone, wp8, wpa81, android, xamarin.forms</tags>
     <dependencies>
       <dependency id="Xamarin.Forms" version="1.3.1.6296" />
     </dependencies>
