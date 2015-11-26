@@ -26,3 +26,8 @@ var crossPieChartView = new CrossPieChartView<br/>
                        
 
 The nuget package is available at : https://www.nuget.org/packages/Xam.FormsPlugin.CrossPieChart/
+
+This plugin was built developed using existing work from:
+
+Pascal Welsch : https://github.com/passsy/android-HoloCircularProgressBar/
+Timo Korinth : http://timokorinth.de/creating-circular-progress-bar-wpf-silverlight/
