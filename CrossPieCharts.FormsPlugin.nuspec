@@ -9,7 +9,7 @@
     <licenseUrl>https://github.com/HoussemDellai/Xamarin-Forms-Pie-Chart</licenseUrl>
     <projectUrl>https://github.com/HoussemDellai/Xamarin-Forms-Pie-Chart</projectUrl>
     <!--Default Icon, a template can be found:  https://raw.githubusercontent.com/jamesmontemagno/Xamarin-Templates/master/Plugins-Templates/icons/plugin_icon.png-->
-    <iconUrl>https://raw.githubusercontent.com/jamesmontemagno/Xamarin-Templates/master/Plugins-Templates/icons/plugin_icon_nuget.png</iconUrl>
+    <iconUrl>https://github.com/HoussemDellai/Xamarin-Forms-Pie-Chart/blob/master/Screenshots/pie.PNG</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>
       Enrich your mobile application with Pie Charts.
