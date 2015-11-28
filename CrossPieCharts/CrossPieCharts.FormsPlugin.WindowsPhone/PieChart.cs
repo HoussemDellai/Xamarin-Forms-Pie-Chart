@@ -12,7 +12,7 @@ namespace CrossPieCharts.FormsPlugin.WindowsPhone
     /// <summary>
     /// Pie Chart control for Windows Phone Silverlight.
     /// </summary>
-    public class PieChart : UserControl
+    public class PieChart : Grid
     {
 
         public int Radius
@@ -291,15 +291,14 @@ namespace CrossPieCharts.FormsPlugin.WindowsPhone
                 }
             };
 
-            Content = new Grid
-            {
-                Background = BackgroundColor, //new SolidColorBrush(Colors.White),
-                Children =
-                {
-                    _pathRoot360,
-                    _pathRoot,
-                }
-            };
+            Children.Clear(); // remove the chart created with default values
+            Children.Add(_pathRoot360);
+            Children.Add(_pathRoot);
+
+            Background = BackgroundColor;
+
+            Width = Radius * 2.5 + StrokeThickness;
+            Height = Radius * 2.5 + StrokeThickness;
         }
     }
 }
