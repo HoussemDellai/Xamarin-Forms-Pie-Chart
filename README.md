@@ -24,6 +24,7 @@ var crossPieChartView = new CrossPieChartView<br/>
 &nbsp;  		BackgroundColor = Color.White<br/>
 };<br/>
                        
+Here is a video that shows how to install and use the plugin : https://www.youtube.com/watch?v=9alb3AFHkRs
 
 The nuget package is available at : https://www.nuget.org/packages/Xam.FormsPlugin.CrossPieChart/
 
