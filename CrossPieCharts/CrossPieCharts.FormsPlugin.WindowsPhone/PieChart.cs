@@ -296,7 +296,7 @@ namespace CrossPieCharts.FormsPlugin.WindowsPhone
             Children.Add(_pathRoot);
 
             Background = BackgroundColor;
-
+       
             Width = Radius * 2.5 + StrokeThickness;
             Height = Radius * 2.5 + StrokeThickness;
         }
