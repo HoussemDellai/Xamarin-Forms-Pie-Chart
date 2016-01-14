@@ -10,7 +10,7 @@ namespace CrossPieCharts.FormsPlugin.WindowsStore
 {
 
     /// <summary>
-    /// Pie Chart control for Windows Phone RT.
+    /// Pie Chart control for Windows Store.
     /// </summary>
     public class PieChart : UserControl
     {

@@ -5,20 +5,23 @@ using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Shapes;
-using CrossPieCharts.FormsPlugin.Abstractions;
-using CrossPieCharts.FormsPlugin.WindowsStore;
-using Xamarin.Forms.Platform.WinRT;
-using Size = Windows.Foundation.Size;
 
-[assembly:ExportRenderer(typeof(CrossPieChartView), typeof(CrossPieChartRenderer))]
-
-namespace CrossPieCharts.FormsPlugin.WindowsStore
+namespace CrossPieCharts.UWP.PieCharts
 {
+
     /// <summary>
-    /// Pie Chart control for Windows Store.
+    /// Pie Chart control for UWP.
     /// </summary>
-    public class CrossPieChartRenderer : UserControl
+    public class PieChart : UserControl
     {
+
+        private double _angle = 120;
+        private ArcSegment _arcSegment = new ArcSegment();
+        private ArcSegment _arcSegment360 = new ArcSegment();
+        private PathFigure _pathFigure = new PathFigure();
+        private PathFigure _pathFigure360 = new PathFigure();
+        private Path _pathRoot = new Path();
+        private Path _pathRoot360 = new Path();
 
         public int Radius
         {
@@ -92,38 +95,17 @@ namespace CrossPieCharts.FormsPlugin.WindowsStore
             }
         }
 
-        public double Angle
-        {
-            get
-            {
-                return (double)GetValue(AngleProperty);
-            }
-            set
-            {
-                SetValue(AngleProperty, value);
-            }
-        }
-
         // Using a DependencyProperty as the backing store for Percentage.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty PercentageProperty =
-            DependencyProperty.Register("Percentage", typeof(double), typeof(PieChart), new PropertyMetadata(65d, OnPercentageChanged));
+            DependencyProperty.Register("Percentage", typeof(double), typeof(PieChart), new PropertyMetadata(65d, OnPropertyChanged));
 
         // Using a DependencyProperty as the backing store for StrokeThickness.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty StrokeThicknessProperty =
-            DependencyProperty.Register("StrokeThickness", typeof(int), typeof(PieChart), new PropertyMetadata(5));
+            DependencyProperty.Register("StrokeThickness", typeof(int), typeof(PieChart), new PropertyMetadata(10, OnPropertyChanged));
 
         // Using a DependencyProperty as the backing store for SegmentColor.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty SegmentColorProperty =
-            DependencyProperty.Register("SegmentColor", typeof(Brush), typeof(PieChart), new PropertyMetadata(new SolidColorBrush(Colors.Green),
-                (o, args) =>
-                {
-                    var circle = o as PieChart;
-
-                    if (circle != null)
-                    {
-                        circle.SegmentColor = (Brush)args.NewValue;
-                    }
-                }));
+            DependencyProperty.Register("SegmentColor", typeof(Brush), typeof(PieChart), new PropertyMetadata(new SolidColorBrush(Colors.Green), OnPropertyChanged));
 
 
         public static readonly DependencyProperty BackgroundColorProperty =
@@ -137,49 +119,41 @@ namespace CrossPieCharts.FormsPlugin.WindowsStore
         public static readonly DependencyProperty RadiusProperty =
             DependencyProperty.Register("Radius", typeof(int), typeof(PieChart), new PropertyMetadata(25, OnPropertyChanged));
 
-        // Using a DependencyProperty as the backing store for Angle.  This enables animation, styling, binding, etc...
-        public static readonly DependencyProperty AngleProperty =
-            DependencyProperty.Register("Angle", typeof(double), typeof(PieChart), new PropertyMetadata(120d, OnPropertyChanged));
-
-
-
-        ArcSegment _arcSegment = new ArcSegment();
-        ArcSegment _arcSegment360 = new ArcSegment();
-
-        PathFigure _pathFigure = new PathFigure();
-        PathFigure _pathFigure360 = new PathFigure();
-
-        private Path _pathRoot = new Path();
-        private Path _pathRoot360 = new Path();
-
-        public CrossPieChartRenderer()
+        public PieChart()
         {
 
             InitializePieChart();
 
-            Angle = Percentage * 360 / 100;
+            //_angle = Percentage * 360 / 100;
         }
 
         private static void OnPercentageChanged(DependencyObject sender, DependencyPropertyChangedEventArgs args)
         {
-            var circle = sender as PieChart;
+            var pieChart = sender as PieChart;
 
-            circle.Angle = (circle.Percentage * 360) / 100;
+            pieChart._angle = (pieChart.Percentage * 360) / 100;
+
+            pieChart.InitializePieChart();
+
+            pieChart.RenderArc();
         }
 
         private static void OnPropertyChanged(DependencyObject sender, DependencyPropertyChangedEventArgs args)
         {
-            var circle = sender as PieChart;
+            var pieChart = sender as PieChart;
 
-            circle.InitializePieChart();
+            pieChart.InitializePieChart();
 
-            circle.RenderArc();
+            pieChart.RenderArc();
         }
 
         public void RenderArc()
         {
+
+            _angle = Percentage * 360 / 100;
+
             var startPoint = new Point(Radius, 0);
-            var endPoint = ComputeCartesianCoordinate(Angle, Radius);
+            var endPoint = ComputeCartesianCoordinate(_angle, Radius);
             endPoint.X += Radius;
             endPoint.Y += Radius;
 
@@ -187,7 +161,7 @@ namespace CrossPieCharts.FormsPlugin.WindowsStore
             _pathRoot.Height = Radius * 2 + StrokeThickness;
             _pathRoot.Margin = new Thickness(StrokeThickness, StrokeThickness, 0, 0);
 
-            var largeArc = Angle > 180.0;
+            var largeArc = _angle > 180.0;
 
             var outerArcSize = new Size(Radius, Radius);
 
@@ -199,7 +173,7 @@ namespace CrossPieCharts.FormsPlugin.WindowsStore
             }
 
             _arcSegment.Point = endPoint;
-            _arcSegment.Size = outerArcSize;//new System.Windows.Size(outerArcSize.Width, outerArcSize.Height);
+            _arcSegment.Size = outerArcSize;
             _arcSegment.IsLargeArc = largeArc;
 
             // Draw the 360 arc/circle
@@ -220,7 +194,7 @@ namespace CrossPieCharts.FormsPlugin.WindowsStore
             }
 
             _arcSegment360.Point = endPoint2;
-            _arcSegment360.Size = outerArcSize;//new System.Windows.Size(outerArcSize.Width, outerArcSize.Height);
+            _arcSegment360.Size = outerArcSize;
             _arcSegment360.IsLargeArc = true;
         }
 
@@ -235,8 +209,9 @@ namespace CrossPieCharts.FormsPlugin.WindowsStore
             return new Point(x, y);
         }
 
-        private void InitializePieChart()
+        public void InitializePieChart()
         {
+            
             // draw the full circle/arc
             _arcSegment360 = new ArcSegment
             {
@@ -298,7 +273,7 @@ namespace CrossPieCharts.FormsPlugin.WindowsStore
 
             Content = new Grid
             {
-                Background = BackgroundColor, //new SolidColorBrush(Colors.White),
+                Background = BackgroundColor,
                 Children =
                 {
                     _pathRoot360,

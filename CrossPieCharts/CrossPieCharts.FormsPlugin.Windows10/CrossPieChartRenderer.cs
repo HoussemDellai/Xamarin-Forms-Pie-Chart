@@ -5,17 +5,17 @@ using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Shapes;
-using CrossPieCharts.FormsPlugin.Abstractions;
-using CrossPieCharts.FormsPlugin.WindowsStore;
-using Xamarin.Forms.Platform.WinRT;
+//using CrossPieCharts.FormsPlugin.Abstractions;
+using CrossPieCharts.FormsPlugin.Windows10;
+//using Xamarin.Forms.Platform.WinRT;
 using Size = Windows.Foundation.Size;
 
-[assembly:ExportRenderer(typeof(CrossPieChartView), typeof(CrossPieChartRenderer))]
+//[assembly:ExportRenderer(typeof(CrossPieChartView), typeof(CrossPieChartRenderer))]
 
-namespace CrossPieCharts.FormsPlugin.WindowsStore
+namespace CrossPieCharts.FormsPlugin.Windows10
 {
     /// <summary>
-    /// Pie Chart control for Windows Store.
+    /// Pie Chart control for Windows 10.
     /// </summary>
     public class CrossPieChartRenderer : UserControl
     {

@@ -5,19 +5,14 @@ using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Shapes;
-using CrossPieCharts.FormsPlugin.Abstractions;
-using CrossPieCharts.FormsPlugin.WindowsStore;
-using Xamarin.Forms.Platform.WinRT;
-using Size = Windows.Foundation.Size;
 
-[assembly:ExportRenderer(typeof(CrossPieChartView), typeof(CrossPieChartRenderer))]
-
-namespace CrossPieCharts.FormsPlugin.WindowsStore
+namespace CrossPieCharts.FormsPlugin.Windows10
 {
+
     /// <summary>
-    /// Pie Chart control for Windows Store.
+    /// Pie Chart control for Windows 10.
     /// </summary>
-    public class CrossPieChartRenderer : UserControl
+    public class PieChart : UserControl
     {
 
         public int Radius
@@ -152,7 +147,7 @@ namespace CrossPieCharts.FormsPlugin.WindowsStore
         private Path _pathRoot = new Path();
         private Path _pathRoot360 = new Path();
 
-        public CrossPieChartRenderer()
+        public PieChart()
         {
 
             InitializePieChart();
@@ -199,7 +194,7 @@ namespace CrossPieCharts.FormsPlugin.WindowsStore
             }
 
             _arcSegment.Point = endPoint;
-            _arcSegment.Size = outerArcSize;//new System.Windows.Size(outerArcSize.Width, outerArcSize.Height);
+            _arcSegment.Size = outerArcSize;
             _arcSegment.IsLargeArc = largeArc;
 
             // Draw the 360 arc/circle
@@ -220,7 +215,7 @@ namespace CrossPieCharts.FormsPlugin.WindowsStore
             }
 
             _arcSegment360.Point = endPoint2;
-            _arcSegment360.Size = outerArcSize;//new System.Windows.Size(outerArcSize.Width, outerArcSize.Height);
+            _arcSegment360.Size = outerArcSize;
             _arcSegment360.IsLargeArc = true;
         }
 
@@ -235,7 +230,7 @@ namespace CrossPieCharts.FormsPlugin.WindowsStore
             return new Point(x, y);
         }
 
-        private void InitializePieChart()
+        public void InitializePieChart()
         {
             // draw the full circle/arc
             _arcSegment360 = new ArcSegment
