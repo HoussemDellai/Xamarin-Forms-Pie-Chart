@@ -2,14 +2,14 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata minClientVersion="2.8.1">
     <id>PieCharts.WinRT</id>
-    <version>1.0.1</version>
+    <version>1.0.3</version>
     <title>Pie Chart Control for WinRT</title>
     <authors>Houssem Dellai</authors>
     <owners>Houssem Dellai</owners>
     <licenseUrl>https://github.com/HoussemDellai/Xamarin-Forms-Pie-Chart</licenseUrl>
     <projectUrl>https://github.com/HoussemDellai/Xamarin-Forms-Pie-Chart</projectUrl>
     <!--Default Icon, a template can be found:  https://raw.githubusercontent.com/jamesmontemagno/Xamarin-Templates/master/Plugins-Templates/icons/plugin_icon.png-->
-    <iconUrl>https://github.com/HoussemDellai/Xamarin-Forms-Pie-Chart/blob/master/Screenshots/charts_logo.PNG</iconUrl>
+    <iconUrl>https://github.com/HoussemDellai/Xamarin-Forms-Pie-Chart/blob/master/Screenshots/piecharts-uwp-icon.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>
       Enrich your Windows Phone 8.1 and Windows 8.1 applications with Pie Charts.
