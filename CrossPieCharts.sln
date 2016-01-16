@@ -18,7 +18,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A704DCE0-3E64-4E1F-B69D-AF067BB81612}"
 	ProjectSection(SolutionItems) = preProject
 		CrossPieCharts.FormsPlugin.nuspec = CrossPieCharts.FormsPlugin.nuspec
-		CrossPieCharts.UWP.nuspec = CrossPieCharts.UWP.nuspec
+		PieCharts.WinRT.nuspec = PieCharts.WinRT.nuspec
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrossPieCharts.FormsPlugin.Windows10", "CrossPieCharts\CrossPieCharts.FormsPlugin.Windows10\CrossPieCharts.FormsPlugin.Windows10.csproj", "{BA5D1B34-341E-421A-BBA2-C65974E076E1}"

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata minClientVersion="2.8.1">
+    <id>PieCharts.WinRT</id>
+    <version>1.0.1</version>
+    <title>Pie Chart Control for WinRT</title>
+    <authors>Houssem Dellai</authors>
+    <owners>Houssem Dellai</owners>
+    <licenseUrl>https://github.com/HoussemDellai/Xamarin-Forms-Pie-Chart</licenseUrl>
+    <projectUrl>https://github.com/HoussemDellai/Xamarin-Forms-Pie-Chart</projectUrl>
+    <!--Default Icon, a template can be found:  https://raw.githubusercontent.com/jamesmontemagno/Xamarin-Templates/master/Plugins-Templates/icons/plugin_icon.png-->
+    <iconUrl>https://github.com/HoussemDellai/Xamarin-Forms-Pie-Chart/blob/master/Screenshots/charts_logo.PNG</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>
+      Enrich your Windows Phone 8.1 and Windows 8.1 applications with Pie Charts.
+    </description>
+    <summary>Enrich your Windows Phone 8.1 and Windows 8.1 applications with Pie Charts.</summary>
+    <tags>charts, windows phone, windows, winrt</tags>
+  </metadata>
+  <files>
+
+    <!--Win 81-->
+    <file src="CrossPieCharts\CrossPieCharts.WindowsStore\PieChart.cs"
+          target="content\win81\CrossPieCharts\PieChart.cs" />
+    
+    <file src="CrossPieCharts\CrossPieCharts.WindowsStore\Read_me.txt"
+          target="content\win81\CrossPieCharts\PieChart.cs" />
+
+    <!--Windows Phone 8.1-->
+    <file src="CrossPieCharts\CrossPieCharts.WindowsStore\PieChart.cs"
+          target="content\wpa81\CrossPieCharts\PieChart.cs" />
+
+    <file src="CrossPieCharts\CrossPieCharts.WindowsStore\Read_me.txt"
+          target="content\wpa81\CrossPieCharts\PieChart.cs" />
+   
+  </files>
+</package>
