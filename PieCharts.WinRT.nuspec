@@ -24,14 +24,14 @@
           target="content\win81\CrossPieCharts\PieChart.cs" />
     
     <file src="CrossPieCharts\CrossPieCharts.WindowsStore\Read_me.txt"
-          target="content\win81\CrossPieCharts\PieChart.cs" />
+          target="content\win81\CrossPieCharts\Read_me.txt" />
 
     <!--Windows Phone 8.1-->
     <file src="CrossPieCharts\CrossPieCharts.WindowsStore\PieChart.cs"
           target="content\wpa81\CrossPieCharts\PieChart.cs" />
 
     <file src="CrossPieCharts\CrossPieCharts.WindowsStore\Read_me.txt"
-          target="content\wpa81\CrossPieCharts\PieChart.cs" />
+          target="content\wpa81\CrossPieCharts\Read_me.txt" />
    
   </files>
 </package>
